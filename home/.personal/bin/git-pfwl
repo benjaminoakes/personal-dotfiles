@@ -1,0 +1,5 @@
+current_branch="$(git symbolic-ref --short HEAD)"
+
+set -x
+git push --force-with-lease origin "$current_branch"
+git push -u origin "$current_branch"
