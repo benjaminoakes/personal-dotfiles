@@ -1,0 +1,37 @@
+# vi: set ft=gitconfig :
+
+[alias]
+  # Overrides
+  df = diff --color --no-prefix
+  lg = log -p --no-prefix
+
+  # Helpers
+  ls = ls-files
+  dc = diff --cached
+
+  # Typos
+  oc = checkout
+  ic = commit
+  pflw = pfwl
+  pfw = pfwl
+  fpwl = pfwl
+  pwfl = pfwl
+  pll = pull
+  upll = pull
+  cloen = clone
+[core]
+  attributesfile = ~/.personal/gitconfig.d/gitattributes
+[diff "rspec"]
+  # From https://tekin.co.uk/2020/10/better-git-diff-output-for-ruby-python-elixir-and-more
+  xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario)[ \t].*)$"
+[alias]
+  git = !exec git
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+[pull]
+  ff = only
+[help]
+  autoCorrect = immediate
