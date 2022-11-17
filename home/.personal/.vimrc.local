@@ -1,0 +1,69 @@
+set spellfile=~/.personal/vim/spell/en.utf-8.add
+
+abbrev TOOD TODO
+abbrev buig bug
+abbrev flase false
+abbrev frmo from
+abbrev hte the
+abbrev jsut just
+abbrev nad and
+abbrev ptus puts
+abbrev teamplate template
+abbrev teh the
+abbrev tempalte template
+abbrev ture true
+abbrev yuo you
+
+" Based on http://robots.thoughtbot.com/faster-grepping-in-vim
+" bind K to grep word under cursor
+" nnoremap K :Ggrep "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" Same as o, but doesn't leave you in insert.  Really nice for spacing code out.
+noremap - o<esc>
+noremap _ O<esc>
+
+" Mostly disable Syntastic
+let g:syntastic_scss_checkers = []
+let g:syntastic_javascript_checkers = []
+" may need statusline change too
+
+nmap <Leader>r ggIRefactor: <esc>
+
+nmap <Leader>f i#{__FILE__}:#{__LINE__} <esc>
+nmap <Leader>x 0f[lrx
+map <Leader>i YPIputs "<esc>A: #{(<esc>JxA)}"<esc>hi.inspect<esc>0j
+runtime! macros/matchit.vim
+
+set re=1
+
+" Auto-save
+" set updatetime=100 " needed for the next bit
+" autocmd CursorHold * update " https://vi.stackexchange.com/questions/74/is-it-possible-to-make-vim-auto-save-files
+
+" https://www.rockyourcode.com/vim-trick-map-ctrl-s-to-save/
+nnoremap <silent><c-s> :<c-u>update<cr>
+vnoremap <silent><c-s> <c-c>:update<cr>gv
+inoremap <silent><c-s> <c-o>:update<cr>
+
+" Folding
+"
+" -------
+
+" set foldmethod=indent " Indent based on how many tabstops there are
+set foldmethod=syntax " Indent based on language syntax
+
+" [vim: enable folds but don't automatically close them](http://superuser.com/questions/169973/vim-enable-folds-but-dont-automatically-close-themhttp://superuser.com/questions/169973/vim-enable-folds-but-dont-automatically-close-them)
+" set foldlevelstart=99
+
+" @see http://www.codeography.com/2010/07/13/json-syntax-highlighting-in-vim.html
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
+" Resize splits when window size changes
+au VimResized * exe "normal! \<c-w>="
+
+" set mouse=a " works in iTerm 2
+
+" Plug 'https://github.com/chiedo/vim-case-convert'
+call plug#begin()
+Plug 'cespare/vim-toml'
+call plug#end()
