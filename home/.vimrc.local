@@ -63,8 +63,3 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 au VimResized * exe "normal! \<c-w>="
 
 " set mouse=a " works in iTerm 2
-
-" Plug 'https://github.com/chiedo/vim-case-convert'
-call plug#begin()
-Plug 'cespare/vim-toml'
-call plug#end()
