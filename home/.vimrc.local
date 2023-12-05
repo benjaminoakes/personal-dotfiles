@@ -23,6 +23,8 @@ abbrev yuo you
 noremap - o<esc>
 noremap _ O<esc>
 
+let maplocalleader = "\\"
+
 " Mostly disable Syntastic
 let g:syntastic_scss_checkers = []
 let g:syntastic_javascript_checkers = []
