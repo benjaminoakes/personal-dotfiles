@@ -1,6 +1,8 @@
 " vi: set ft=vim :
 set spellfile=~/.personal/vim/spell/en.utf-8.add
 
+" TODO: Plug 'https://github.com/freitass/todo.txt-vim'
+
 abbrev TOOD TODO
 abbrev buig bug
 abbrev flase false
